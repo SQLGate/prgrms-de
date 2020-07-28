@@ -1,4 +1,4 @@
-# 코딩 숙제 : SQL이나  Python으로 Monthly Active User 찾기
+# SQL이나  Python으로 Monthly Active User 찾기
 
 ```markdown
  - 앞서 주어진 두개의 테이블 (raw_data.session_timestamp, raw_data.user_session_channel)을 바탕으로 월별마다 액티브한 사용자들의 수를 카운트한다.
@@ -8,8 +8,10 @@
    - 2019-06: 500
    - 2019-07: 600
    - ...
-   
+
 ``````
+
+[Get-Monthly-Active-User.sql](./Get-Monthly-Active-User.sql)
 
 ```SQL
 SELECT
