@@ -1,6 +1,9 @@
 # 데이터 엔지니어링을 시작하려는 모두에게 자신있게 추천하는 첫 스텝
 
-[[스터디] 실리콘밸리에서 날아온 데이터 엔지니어링 스타터 키트 with Python](https://programmers.co.kr/learn/courses/10505)
+**[스터디] 실리콘밸리에서 날아온 데이터 엔지니어링 스타터 키트 with Python]**   
+[(https://programmers.co.kr/learn/courses/10505](https://programmers.co.kr/learn/courses/10505)
+
+**프로그래머스의 ‘실리콘밸리에서 날아온 데이터 엔지니어링 스타터 키트’ 를 참여하며 수행한 내용입니다.**
 
 **해당 강좌는 마감되었습니다.**
 
