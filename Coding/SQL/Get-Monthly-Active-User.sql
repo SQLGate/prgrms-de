@@ -1,3 +1,6 @@
+/*********************************************************
+-- 매달 Active 한 사용자 선별
+*********************************************************/
 SELECT
   to_char(st.ts, 'YYYY-MM') as Monthly,
   count(DISTINCT usc.userid) as ActiveUser
