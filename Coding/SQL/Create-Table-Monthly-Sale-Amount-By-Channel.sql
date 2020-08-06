@@ -1,3 +1,4 @@
+/*********************************************************
 -- 채널별 월 매출액 테이블 만들기
 -- session_timestamp, user_session_channel, channel, session_transaction 테이블들을 사용
 -- channel에 있는 모든 채널에 대해 구성해야함 (값이 없는 경우라도)
@@ -9,6 +10,7 @@
 -- conversionRate (구매사용자 / 총방문 사용자)
 -- grossRevenue (refund 포함)
 -- netRevenue (refund 제외)
+*********************************************************/
 WITH revenueChannel AS
 ( SELECT  a.channelname,
                   COUNT( DISTINCT( b.sessionid ) ) AS uniqueUsers ,
