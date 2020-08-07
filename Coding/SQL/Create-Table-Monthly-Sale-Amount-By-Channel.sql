@@ -12,33 +12,42 @@
 -- netRevenue (refund 제외)
 *********************************************************/
 WITH revenueChannel AS
-( SELECT  a.channelname,
-                  COUNT( DISTINCT( b.sessionid ) ) AS uniqueUsers ,
-                  COUNT( DISTINCT
-                  CASE
-                           WHEN c.amount > 0 THEN b.sessionid
-                           ELSE NULL
-                  END ) paidUsers,
-                  SUM( c.amount ) AS grossRevenue,
-                  SUM(
-                  CASE c.refunded
-                           WHEN True THEN c.amount * -1
-                           ELSE c.amount
-                  END ) AS netRevenue
-         FROM     raw_data.channel a
-                  LEFT JOIN raw_data.user_session_channel b
-                        JOIN raw_data.session_transaction c
-                        ON b.sessionid = c.sessionid
-                        JOIN raw_data.session_timestamp d
-                        ON b.sessionid = d.sessionid
-                  ON a.channelname = b.channel
-         GROUP BY 1
+(
+    SELECT
+            LEFT(d.ts, 7) AS month,
+            a.channelname,
+            COUNT(DISTINCT(b.userid)) AS uniqueUsers,
+            COUNT(
+                DISTINCT CASE
+                WHEN c.amount > 0 THEN b.userid
+                ELSE NULL
+                END
+            ) paidUsers,
+            SUM(c.amount) AS grossRevenue,
+            SUM(
+                CASE
+                c.refunded
+                WHEN False THEN c.amount
+                END
+            ) AS netRevenue
+    FROM
+            raw_data.channel a
+            LEFT JOIN raw_data.user_session_channel b
+              JOIN raw_data.session_transaction c 
+                ON b.sessionid = c.sessionid
+              JOIN raw_data.session_timestamp d 
+                ON b.sessionid = d.sessionid 
+            ON a.channelname = b.channel
+    GROUP BY
+        1,2
+    ORDER BY
+        1,2
 )
-SELECT   a.channelname,
+SELECT   a.month,
+         a.channelname,
          a.uniqueUsers,
          a.paidUsers,
          ROUND(( a.paidUsers::NUMERIC / NULLIF( a.uniqueUsers::NUMERIC,0 ) )*100,2 ) AS conversionRate,
          a.grossRevenue,
          a.netRevenue
 FROM     revenueChannel a
-ORDER BY 1
