@@ -1,10 +1,12 @@
-from airflow import DAG
+# -*- coding: utf-8 -*- 
+# 
+# from airflow import DAG
 from airflow.operators import PythonOperator
 from datetime import datetime
 
 import os
 import sys
-sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__)))+'\..\Python')
+sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__)))+'/../Python')
 import DB_Insert_Transaction_With as air
 
 
