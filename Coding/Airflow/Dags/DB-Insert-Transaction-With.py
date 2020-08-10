@@ -34,5 +34,5 @@ task = PythonOperator(
   
 # task가 하나 밖에 없는 경우 아무 것도 하지 않아도 그냥 실행됨
 if __name__ == "__main__":    
-  etl()
-  # pass
+  # etl()
+  pass
