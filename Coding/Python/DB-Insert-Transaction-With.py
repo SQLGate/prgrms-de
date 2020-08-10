@@ -5,7 +5,7 @@ import requests
 def get_Redshift_connection():
     host = "connectionhost"
     redshift_user = "user"
-    redshift_pass = "password"
+    redshift_pass = "pass"
     port = 5439
     dbname = "dev"
     conn = psycopg2.connect("dbname={dbname} user={user} host={host} password={password} port={port}".format(
