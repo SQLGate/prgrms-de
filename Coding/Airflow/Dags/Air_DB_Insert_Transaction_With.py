@@ -6,7 +6,8 @@ from datetime import datetime
 
 import os
 import sys
-sys.path.append(os.path.join(os.path.dirname(__file__), '../../Python'))
+sys.path.append(os.path.join(os.path.dirname(os.path.abspath(__file__)), '../../Python'))
+               
 import DB_Insert_Transaction_With as air
 
 
@@ -36,8 +37,5 @@ task = PythonOperator(
   
 # task가 하나 밖에 없는 경우 아무 것도 하지 않아도 그냥 실행됨
 if __name__ == "__main__":    
-    print('dirname:     ', os.path.dirname(__file__))
-    target_path_2 = os.path.join(os.path.dirname(__file__), '../../Python')
-    print('target_path_2:     ', target_path_2)
     etl()
   # pass
