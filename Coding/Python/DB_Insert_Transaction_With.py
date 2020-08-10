@@ -72,8 +72,8 @@ def load(text):
     cur.close()    
 
 if __name__ == "__main__":    
-  # link = "https://s3-geospatial.s3-us-west-2.amazonaws.com/name_gender.csv"
-  # data = extract(link)
-  # lines = transform(data)
-  # load(lines)
-  pass
+  link = "https://s3-geospatial.s3-us-west-2.amazonaws.com/name_gender.csv"
+  data = extract(link)
+  lines = transform(data)
+  load(lines)
+  # pass
