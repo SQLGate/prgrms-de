@@ -7,7 +7,7 @@ from datetime import datetime
 import os
 import sys
 # sys.path.append(os.path.join(os.path.dirname(os.path.abspath(__file__)), '../../Python'))
-sys.path.append('/home/ubuntu/prgrms-de/Coding/Python')
+# sys.path.append('/home/ubuntu/prgrms-de/Coding/Python')
                
 import DB_Insert_Transaction_With as air
 

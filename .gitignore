@@ -2,3 +2,4 @@
 /Coding/Airflow/Dags/*.bak
 /Coding/Python/DB_Insert_Transaction_With_Connection.py
 /command.txt
+/Coding/Airflow/Dags/__pycache__
