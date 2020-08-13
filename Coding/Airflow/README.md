@@ -16,7 +16,7 @@
 1. 헤더의 값이 들어가는 이슈 제거 
 2. 현재 잡을 수행할 때마다 테이블에 레코드들이 들어가는데 이를 idempotent하게 수정하기
 
-코드 : [DB_Insert_Transaction_With.py](DB_Insert_Transaction_With.py) 
+코드 : [Dags/DB_Insert_Transaction_With.py](Dags/DB_Insert_Transaction_With.py) 
 
 ### Colab Python 예제를 Airflow의 DAG 포맷으로 바꿔보기  
 
@@ -24,4 +24,4 @@
 
 그 이유는 Airflow의 경우 태스크들간의 데이터 이동이 복잡해서 그렇습니다 (Xcom이란 기능 사용 필요). 
 
-코드 : [Air_DB_Insert_Transaction_With.py](Air_DB_Insert_Transaction_With.py)
+코드 : [Dags/Air_DB_Insert_Transaction_With.py](Dags/Air_DB_Insert_Transaction_With.py)
