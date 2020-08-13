@@ -25,7 +25,7 @@ dag_second_assignment = DAG(
   # Year              ( range 1900-3000 )
 
 def etl():
-	 # 여기에 코드를 기록
+  # 여기에 코드를 기록
   link = "https://s3-geospatial.s3-us-west-2.amazonaws.com/name_gender.csv"
   data = air.extract(link)
   lines = air.transform(data)
@@ -37,6 +37,7 @@ task = PythonOperator(
 	dag = dag_second_assignment)
   
 # task가 하나 밖에 없는 경우 아무 것도 하지 않아도 그냥 실행됨
+
 if __name__ == "__main__":    
-    etl()
-  # pass
+  # etl()
+  pass
